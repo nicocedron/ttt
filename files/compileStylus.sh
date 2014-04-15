@@ -1,1 +1,0 @@
-stylus -c -w stylesheet/all.styl -u nib -o ../build/css/
