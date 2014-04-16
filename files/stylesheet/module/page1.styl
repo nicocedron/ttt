@@ -6,7 +6,7 @@
 	position absolute
 	overflow hidden
 	transform scale(0)
-	transition transform 0.5s 0, left 0.5s 0,top 0.5s 0, opacity 1s
+	transition transform 0.5s, left 0.5s,top 0.5s, opacity 1s
 	transition-timing-function ease-in-out
 	z-index 2
 
@@ -52,7 +52,7 @@
 	margin-top -200px
 	overflow hidden
 	transform scale(0)
-	transition transform 0.5s 0
+	transition transform 0.5s
 	transition-timing-function ease-in-out
 
 	&.visible
@@ -117,4 +117,8 @@
 			margin-left -100px
 			font-size 14px
 			font-weight 200
-			transition all 0.5s
+			transition all 0.5s ease-in-out 1s
+
+			&.visible
+				opacity 1
+				top 100%
