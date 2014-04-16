@@ -29,7 +29,11 @@ $(document).on('ready',function(){
 		setTimeout(function(){
 			$('.ability').appendTo('.ci').css({left:'40%',top:'40%'});
 			$('#page1 h1.title').slideDown(1000,function(){
-				$('.bottom',this).css('top','100%').css('opacity',1);
+				
+
+				setTimeout(function(){
+					$('.bottom').addClass('visible');
+				},10);				
 			});
 
 			setTimeout(function(){
