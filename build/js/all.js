@@ -33,12 +33,15 @@ $(document).on('ready',function(){
 
 				setTimeout(function(){
 					$('.bottom').addClass('visible');
-				},10);				
+				},10);
+
+				
 			});
 
 			setTimeout(function(){
 				$('.ability').css('opacity',1);
 				calculatePositions('123');
+				parallax('#page1');
 			},10);
 			
 		},2400);		
@@ -78,4 +81,34 @@ function calculatePositions(containerId){
 		theta +=  radians;
 	}
 	
+}
+
+function parallax(obj){
+	
+	if($(window).width()<950) return;
+
+	var w = $(window).width();
+	var h = $(window).height();
+
+	$(obj).on('mousemove', function(e) {
+		
+	        var offsetX = 0.5 - e.pageX / w;
+	        var offsetY = 0.5 - e.pageY / h;
+
+	        $(".parallax").each(function(i, el) {
+	            var offset = parseInt($(el).data('offset'));
+	            var translate = "translate3d(" + Math.round(offsetX * offset) + "px," + Math.round(offsetY * offset) + "px, 0px)";
+
+	            $(el).css({
+	            	'-webkit-transition': 'none',
+	            	'-moz-transition': 'none',
+	            	'-o-transition': 'none',
+	            	'-ms-transition': 'none',
+	            	'transition': 'none',
+	                '-webkit-transform': translate,
+	                'transform': translate,
+	                '-moz-transform': translate
+	            });
+	        });
+	    });
 }
